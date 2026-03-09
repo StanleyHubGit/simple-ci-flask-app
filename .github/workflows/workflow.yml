@@ -1,0 +1,25 @@
+name: Python CI Test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install Pipenv
+        run: pip install pipenv
+
+      - name: Install Dependencies
+        run: pipenv install --dev
+
+      - name: Run Tests
+        run: pipenv run pytest
