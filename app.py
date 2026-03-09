@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to my CI/CD Flask App"
+    return "Hello CI/CD"
 
 @app.route("/add/<int:a>/<int:b>")
 def add(a, b):
